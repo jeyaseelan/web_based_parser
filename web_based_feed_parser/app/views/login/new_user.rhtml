@@ -1,0 +1,110 @@
+<%= javascript_include_tag "prototype" %>
+<%= javascript_include_tag "prototype" %>
+<%= javascript_include_tag "livevalidation" %>
+<%= stylesheet_link_tag 'style' %>
+<%= stylesheet_link_tag 'livevalidation' %>
+
+
+<%form_tag(:action => "new_user") do %>
+<center><table border=0 width="100%" >
+
+<%if flash[:notice] and flash[:notice]!="" %>
+    <tr>
+        <td colspan=3>
+            
+            <font size=2 color=red>
+                <%=flash[:notice] %>
+            </font>
+            <%=flash[:notice]=nil %>
+        </td>
+    </tr><%end %>
+	<tr><td align="center" colspan="2"><h2>Register Yourself!</h2></td>
+	<tr></tr>
+    <tr>
+        <td width="20%">
+            User Name
+        </td>
+        <td width="30%">
+            <%=text_field :user,:name,:id=>"name" %>
+        </td><td align="left"><span id="nameerror">&nbsp;</span></td>
+    </tr>
+        <tr>
+        <td>
+            Email
+        </td>
+        <td>
+            <%=text_field :user,:email,:id=>"email" %>
+        </td>
+        <td align="left"><span id="emailerror">&nbsp;</span>
+    </tr>
+    <tr>
+        <td>
+            Mobile
+        </td>
+        <td>
+            <%=text_field :user,:mobile,:id=>"mobile" %>
+        </td>
+        <td align="left"><span id="mobileerror">&nbsp;</span>
+    </tr>
+    <tr>
+        <td>
+            Login Name
+        </td>
+        <td>
+            <%=text_field :user,:user_name,:id=>"loginname" %>
+        </td>
+        <td align="left"><span id="lnameerror">&nbsp;</span>
+    </tr>
+    <tr>
+        <td>
+            Password
+        </td>
+        <td>
+            <%=password_field :user,:password,:id=>"password" %>
+        </td>
+        <td align="left"><span id="passworderror">&nbsp;</span>
+    </tr>
+    <tr>
+        <td>
+            Confirm Password
+        </td>
+        <td>
+            <%=password_field :user,:cpassword,:id=>"cpassword" %>
+        </td>
+        <td align="left"><span id="cpassworderror">&nbsp;</span>
+    </tr>
+    <tr><td>&nbsp;</td>
+        <td align="center">
+            <%=submit_tag "Register" %>
+        </td><td>&nbsp;</td>
+    </tr></caption>
+</table>
+<%end %>
+
+<SCRIPT LANGUAGE="JavaScript1.3">
+var name = new LiveValidation( "name",{ validMessage: "",insertAfterWhatNode: "nameerror"});
+name.add( Validate.Presence,{failureMessage: "*User Name can't be blank !*"} ); 
+
+var email = new LiveValidation( "email",{ validMessage: " ",insertAfterWhatNode: "emailerror"});
+email.add( Validate.Presence,{failureMessage: "* Email can't be blank ! *"});
+email.add( Validate.Email,{failureMessage: "* Enter valid Email address ! *"} );
+
+var mobile = new LiveValidation( "mobile",{ validMessage: " ",insertAfterWhatNode: "mobileerror"});
+mobile.add( Validate.Presence,{failureMessage: "* Mobile Number can't be blank !*"});
+mobile.add( Validate.Numericality, { onlyInteger: true ,notANumberMessage : "* Mobile Number must be a Number ! *"} );      
+mobile.add( Validate.Length, { minimum: 10, maximum: 13,tooLowMessage  : "* Please Enter Valid Mobile Number ! *", tooHighMessage :"* Please Enter Valid Mobile Number !*" } );             
+
+var loginname = new LiveValidation( "loginname",{ validMessage: "",insertAfterWhatNode: "lnameerror"});
+loginname.add( Validate.Presence,{failureMessage: "* Name can't be blank !*"} ); 
+
+var password = new LiveValidation( "password",{ validMessage: " ",insertAfterWhatNode: "passworderror"});
+password.add( Validate.Presence ,{failureMessage : "* Password is Mandatory !" });
+password.add( Validate.Length, { minimum: 6, maximum: 25 ,tooShortMessage  : "* Password must not less than 6 character !", tooLongMessage :"* Password must not more than 25 character !" } ); 
+
+var cpassword = new LiveValidation( "cpassword",{ validMessage: " ",insertAfterWhatNode: "cpassworderror"});
+cpassword.add( Validate.Presence,{failureMessage : "* Confirm Password is Mandatory !" } );
+cpassword.add( Validate.Confirmation, { match: 'password',failureMessage: "* Password doesnot match with Confirm Password !" } );
+
+
+
+</script>

@@ -1,0 +1,38 @@
+<%=
+    link_to_remote("View all", :update =>"second",:submit=>"main",:html=>{:style=>"font-size: 20px; color: black; valign: top;"},:url =>{:action=>"view_rss",:rss_id=>params[:rss_id],:view_all=>"true",:rss_file=>params[:rss_file]},
+    :loading=>"$('loading').show( )",
+    :complete=>"$('loading').hide( )")
+%>
+<br>
+<h3><font size="20px"><%=@rss_type.name%></font></h3>
+<% @p,@postfeed,@postlink,@postdescription,@postdate,@rss_title,@rss_link,@rss_desc=parse_rss("public/rss/#{params[:rss_file]}.xml") %>
+<% j=0 %>
+<h2><%= @rss_title %></h2>
+<h3><%= @rss_desc %></h3>
+<% @p.times do|i| %>
+    <% new_creation,read_status=check_status(params[:rss_id],@postlink[i]) %>
+    <% new_creation=true if params[:view_all] and params[:view_all]=="true" %>
+    <% if new_creation==true or read_status==false %>
+        <% j=j+1 %>
+        <% rss_content_class="rss_content_feed_second" if j%2==0 %>
+        <% rss_content_class="rss_content_feed_first" if j%2!=0 %>
+        <% rss_content_id="rss_div"+j.to_s %>
+
+        <div  class=<%=rss_content_class%> id=<%rss_content_id%>>
+            <li><%= link_to @postfeed[i], {:action =>"view_article",:id=>@postlink[i],:rss_type_id=>params[:rss_id]},:target=>@user_rss_type[0].open_type,:style =>'font-size: 15px' %><%=
+                    check_box(:rss_content,:"#{@postlink[i]}",{:class=> "comboboxtext",:checked=>!read_status,:onclick => remote_function(:update=>"fake",:loading=>"$('loading').show( )",:complete=>"$('loading').hide( )",
+                      :url=>{:action=>'set_view_status',:rss_content_id=>@postlink[i],:rss_type_id=>params[:rss_id]},
+                      :submit=>"main")})
+%>
+<font color="black" size="4">Mark As Unread</font>
+                <br><%= @postdate[i] %>
+                <br><%= @postdescription[i] %>
+            </li>
+        </div>
+    <% end %>
+<% end %>
+
+<% if j==0%>
+<br>
+<h3><font color="black" size="10">All items have been viewed</font></h3>
+<%end%>

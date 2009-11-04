@@ -1,0 +1,64 @@
+--- 
+user_rss_type_rss_contents_004: 
+  updated_at: 2009-11-03 06:43:47.532244
+  rss_content_id: "4"
+  id: "24"
+  viewed: t
+  rss_type_id: "2"
+  user_id: "2"
+user_rss_type_rss_contents_005: 
+  updated_at: 2009-11-03 06:43:47.540538
+  rss_content_id: "18"
+  id: "25"
+  viewed: t
+  rss_type_id: "2"
+  user_id: "2"
+user_rss_type_rss_contents_006: 
+  updated_at: 2009-11-03 06:43:52.872068
+  rss_content_id: "10"
+  id: "17"
+  viewed: f
+  rss_type_id: "1"
+  user_id: "2"
+user_rss_type_rss_contents_007: 
+  updated_at: 2009-11-03 06:43:53.918558
+  rss_content_id: "12"
+  id: "18"
+  viewed: f
+  rss_type_id: "1"
+  user_id: "2"
+user_rss_type_rss_contents_008: 
+  updated_at: 2009-11-03 06:43:57.715271
+  rss_content_id: "20"
+  id: "21"
+  viewed: f
+  rss_type_id: "2"
+  user_id: "2"
+user_rss_type_rss_contents_009: 
+  updated_at: 2009-11-03 06:43:58.361852
+  rss_content_id: "22"
+  id: "22"
+  viewed: f
+  rss_type_id: "2"
+  user_id: "2"
+user_rss_type_rss_contents_001: 
+  updated_at: 2009-11-03 06:43:46.53333
+  rss_content_id: "1"
+  id: "19"
+  viewed: t
+  rss_type_id: "1"
+  user_id: "2"
+user_rss_type_rss_contents_002: 
+  updated_at: 2009-11-03 06:43:46.543619
+  rss_content_id: "16"
+  id: "20"
+  viewed: t
+  rss_type_id: "1"
+  user_id: "2"
+user_rss_type_rss_contents_003: 
+  updated_at: 2009-11-03 06:43:47.51262
+  rss_content_id: "14"
+  id: "23"
+  viewed: t
+  rss_type_id: "2"
+  user_id: "2"

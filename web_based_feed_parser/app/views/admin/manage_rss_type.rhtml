@@ -1,0 +1,125 @@
+
+<table>
+
+    <tr>
+
+        <td><%=
+
+                link_to_remote( (image_tag "/images/rss-icon_new.jpg",:border=>0,:title=>'New Rss',:width=>"120px",:height=>"100px"),:update => "new_edit_rss",
+
+                :url =>{ :controller=>"admin",:action=>"new_edit_rss"},
+
+                :loading => "$('loading').show( );",
+
+                :loaded =>  "$('loading').hide( );")
+%>
+
+
+            <div id="loading" style="display: none;">
+
+                <i>
+
+                    <font color="blue" size=2><%=
+
+                            image_tag("spinner.gif",
+
+                            :align => "absmiddle",
+
+                            :border => 0,
+
+                            :id => "spinner"
+
+                            )
+%>&nbsp;loading...
+
+                        </i>
+
+                        </div>
+
+
+                        </td>
+
+                        </tr>
+
+                        </table>
+
+                        <div id="new_edit_rss">
+
+                            <% if flash[:sucess]=='false' %>
+
+                                <%= render :partial => "admin/new_edit_rss" ,:rss_type=>@values %>
+
+                            <% else %>
+
+                                <font color="red" size="2"><%= flash[:notice] %>
+
+                                    <% flash[:notice]=nil %>
+
+                                </font>
+
+                            <% end %>
+
+                        </div>
+
+                        <% if @rss_types and @rss_types!=nil and @rss_types.length > 0 %>
+
+
+                            <% i=0 %>
+
+                            <% @rss_types.each do |rsstype| %>
+
+                                <% i=i+1 %>
+
+                                <% rss_div_id="rss_div_id"+i.to_s %>
+
+                                <% rss_inner_div_id="rss_inner_div_id"+i.to_s %>
+
+                                <% rss_span_id="rss_span_id"+i.to_s %>
+
+                                <% rss_class="rss_feed_second" if i%2==0 %>
+
+                                <% rss_class="rss_feed_first" if i%2!=0 %>
+
+                                <div id=<%=rss_div_id%> class="<%=rss_class%>">
+
+                                    <h6><%= rsstype.name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        <a href="#i" onClick="hide_input('<%=rss_inner_div_id%>','<%=rss_span_id%>');">
+
+                                            <span id=<%=rss_span_id%>>Show Description</span>
+
+                                        </a><%=
+
+                                            link_to_remote( (image_tag "/images/Edit.gif",:border=>0,:title=>'Edit Rss',:align=>"right",:id=>rsstype.id),:update => "new_edit_rss",:url => {:action=>"new_edit_rss",:id=>rsstype.id},
+
+                                            :loading => "$('loading').show( );",
+
+                                            :loaded =>  "$('loading').hide( );")
+%>
+<%= link_to ((image_tag "/images/delete.gif",:border=>0,:title=>'Delete Rss',:align=>"right"), {:action=>"delete_rss_type",:id=>rsstype.id},{:confirm => "Do you want to Delete #{rsstype.name}?"}) %>
+
+
+                                    </h6><%= rsstype.rssfile %>
+
+                                    <div id=<%=rss_inner_div_id%>><%= rsstype.desc %></div>
+
+                                </div>
+
+                                <script>Effect.toggle('<%= rss_inner_div_id %>', 'Blind');</script>
+
+                            <% end %>
+
+                        <% end %>
+
+                    </font>
+
+                </i>
+
+            </div>
+
+        </td>
+
+    </tr>
+
+</table>
+

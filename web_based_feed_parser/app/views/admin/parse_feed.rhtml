@@ -1,0 +1,29 @@
+<div id="top">
+    <% @rss_types.each do |rss_type| %>
+        <a href="#<%=rss_type.id%>" style="color: orange; font-size: 20px"><%= rss_type.name.capitalize %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <% end %>
+</div>
+<br>
+<br>
+<% @rss_types.each do |rss_type| %>
+    <div id=<%=rss_type.id%> class="rss_heading">
+        <h4><%= rss_type.name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#top" style="color: black; font-size: 10px">Go Top!</a>
+        </h4>
+
+        <% @p,@postfeed,@postlink,@postdescription=parse_rss("public/rss/#{rss_type.rssfile}.xml") %>
+        <% j=0 %>
+        <% @p.times do|i| %>
+            <% j=j+1 %>
+            <% rss_content_class="rss_content_feed_second" if j%2==0 %>
+            <% rss_content_class="rss_content_feed_first" if j%2!=0 %>
+            <div  class=<%=rss_content_class%> >
+                <li><%= link_to @postfeed[i], {:action =>"view_article",:id=>@postlink[i]},:target=>"_blank",:style =>'font-size: 15px' %>
+                    <br><%= @postdate[i] %>
+                    <br><%= @postdescription[i] %>
+                </li>
+            </div>
+
+        <% end %>
+    </div>
+<% end %>

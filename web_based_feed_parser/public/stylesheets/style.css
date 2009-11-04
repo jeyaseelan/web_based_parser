@@ -1,0 +1,71 @@
+.theading {
+background-color: #696969;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size:14px;
+color: #FFF;
+border: .09em solid #000000;
+}
+
+.row1 {
+background-color: #B0E0E6;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+color: #000000;
+border: .09em solid #000000;
+}
+
+.row2 {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+color: #000000;
+border: .09em solid #000000;
+}
+
+
+
+.rss_feed_first
+{
+background: #ecebea url(/images/rss3.jpeg) no-repeat left top;
+padding: 0.25em 1em 0.5em 48px;
+font-family: monaco, "Bitstream Vera Sans Mono", "Courier New", courier, monospace;
+border: none;margin: 0.25em 0 1.5em 0;
+color: #2e969f;
+
+}
+ 
+ 
+ .rss_feed_second
+{
+background: #efe8ba url(/images/rss2.jpeg) no-repeat left top;
+padding: 0.25em 1em 0.5em 48px;
+font-family: monaco, "Bitstream Vera Sans Mono", "Courier New", courier, monospace;
+border: none;margin: 0.25em 0 1.5em 0;
+color: #b33d3d;
+}
+ 
+ 
+.rss_content_feed_first
+{
+background: #ecebea url(/images/rss3.jpeg) no-repeat left top;
+padding: 0.25em 1em 0.5em 48px;
+font-family: monaco, "Bitstream Vera Sans Mono", "Courier New", courier, monospace;
+border: none;margin: 0.25em 0 1.5em 0;
+color: #2e969f;
+
+}
+ 
+ 
+ .rss_content_feed_second
+{
+background: #efe8ba url(/images/rss2.jpeg) no-repeat left top;
+padding: 0.25em 1em 0.5em 48px;
+font-family: monaco, "Bitstream Vera Sans Mono", "Courier New", courier, monospace;
+border: none;margin: 0.25em 0 1.5em 0;
+color: #b33d3d;
+}
+ .my_class
+ {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 14pt;
+color: #FFF;
+ }

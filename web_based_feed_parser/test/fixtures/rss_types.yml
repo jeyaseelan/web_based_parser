@@ -1,0 +1,37 @@
+--- 
+rss_types_001: 
+  name: all
+  updated_at: 
+  id: "-9999"
+  desc: 
+  rssfile: 
+rss_types_002: 
+  name: Technology
+  updated_at: 2009-10-24 06:22:58.537753
+  id: "1"
+  desc: This Rss for the current Technology and Development news.
+  rssfile: technology_rss
+rss_types_003: 
+  name: Business
+  updated_at: 2009-10-24 10:15:55.224405
+  id: "2"
+  desc: news, comment and analysis on personal finance, Your Money guides, and UK house price search
+  rssfile: business_rss
+rss_types_004: 
+  name: Science
+  updated_at: 2009-10-24 10:31:15.644258
+  id: "3"
+  desc: "Get the latest BBC Science and Environment News: breaking news, analysis and debate on science and nature in the UK and around the world."
+  rssfile: science_rss
+rss_types_005: 
+  name: Sports
+  updated_at: 2009-10-24 10:34:05.2363
+  id: "4"
+  desc: Sport is an activity that is governed by a set of rules or customs and often engaged in competitively. Sports commonly refer to activities where the physical capabilities of the competitor are the sole or primary determinant of the outcome (winning or losing)
+  rssfile: sports_rss
+rss_types_006: 
+  name: Magazine
+  updated_at: 2009-10-24 10:37:38.642549
+  id: "5"
+  desc: "BBC News Magazine: in-depth features on topical issues plus a round-up of UK newspapers, your letters and a daily mini-quiz."
+  rssfile: magazine_rss

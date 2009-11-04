@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>Science News</title>
+    <link>preview</link>
+    <description>Get the latest BBC Science and Environment News: breaking news, analysis and debate on science and nature in the UK and around the world.</description>
+    <item>
+      <title>Panel supports commercial space</title>
+      <link>11</link>
+      <description>Experts reviewing the US space programme back using commercial services to launch astronauts.</description>
+      <pubDate>Fri, 23 Oct 2009 05:11:08 -0000</pubDate>
+    </item>
+    <item>
+      <title>Energy reports 'a waste of time'</title>
+      <link>13</link>
+      <description>A former Tomorrow's World presenter brands the system used to assess the energy efficiency of homes as &quot;insane&quot;.</description>
+      <pubDate>Fri, 23 Oct 2009 08:16:22 -0000</pubDate>
+    </item>
+    <item>
+      <title>'Most distant' galaxy group spied</title>
+      <link>3</link>
+      <description>Scientists identify a group of galaxies said to be at a record distance of 10.2 billion light-years away from Earth.</description>
+      <pubDate>Thu, 22 Oct 2009 09:10:19 -0000</pubDate>
+    </item>
+    <item>
+      <title>Green skyscraper</title>
+      <link>17</link>
+      <description>China tower blazes a path in green building technology</description>
+      <pubDate>Thu, 15 Oct 2009 04:07:10 -0000</pubDate>
+    </item>
+    <item>
+      <title>Earth Watch</title>
+      <link>7</link>
+      <description>Copenhagen climate countdown: Deal or no deal?</description>
+      <pubDate>Fri, 23 Oct 2009 10:17:01 -0000</pubDate>
+    </item>
+  </channel>
+</rss>

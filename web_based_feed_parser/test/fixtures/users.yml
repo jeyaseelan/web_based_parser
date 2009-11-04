@@ -1,0 +1,21 @@
+--- 
+users_001: 
+  salt: ISLWQRFBXJA0MIGL
+  name: Administrator
+  updated_at: 2009-10-20 16:31:25.234
+  encrypt_password: f8fcf992c0ddc63c848320ca0beb05b0e8b927a1
+  admin: t
+  id: "1"
+  mobile: "9943786326"
+  user_name: admin
+  email: admin@email.com
+users_002: 
+  salt: ISLWQRFBXJA0MIGL
+  name: User
+  updated_at: 2009-10-24 04:18:46.015526
+  encrypt_password: f8fcf992c0ddc63c848320ca0beb05b0e8b927a1
+  admin: f
+  id: "2"
+  mobile: "9999999999"
+  user_name: user
+  email: user@email.com

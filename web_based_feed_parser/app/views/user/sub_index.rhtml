@@ -1,0 +1,67 @@
+<tr>
+    <td valign="top"  align="left">
+
+        <div style="position: relative; top: 0px; left: 0px; width: 300px; height: 500px;  overflow-x: auto;overflow-y: auto;" id="first">
+                <%= link_to_remote( (image_tag "/images/newrss_user.jpg",:border=>0,:title=>'Add and Delete',:width=>"80px",:height=>"80px",:align=>"right"),:update => "second",
+                :url =>{:action=>"add_type"},
+                :loading => "$('loading').show( );",
+                :loaded =>  "$('loading').hide( );")
+                %>
+               
+            <div id="loading" style="display: none;">
+                <i>
+                    <font color="blue" size=2><%=
+                            image_tag("spinner.gif",
+                            :align => "absmiddle",
+                            :border => 0,
+                            :id => "spinner"
+                            )
+%>&nbsp;loading...
+                        </i>
+                    </font>
+                    </div>
+                    <br>
+                    <br>
+                    <% @rss_types.each do |rss_type| %>
+
+                        <br>
+                        <br>
+                        <br>
+
+                        <%=
+                            link_to_remote( (image_tag "/images/rss-edit-icon.jpg",:border=>0,:title=>'EditRss',:width=>"40px",:height=>"40px",:align=>"right",:valign=>"top"),:update => "second",
+                            :url =>{:action=>"edit_type",:edit_id=>rss_type.id},
+                            :loading => "$('loading').show( );",
+                            :loaded =>  "$('loading').hide( );")
+                        %>
+                        <%=
+                            link_to_remote( (image_tag "/images/rss_delete.png",:border=>0,:title=>'Delete Rss',:width=>"40px",:height=>"40px",:align=>"right"),:update => "main",
+                            :url =>{:action=>"sub_index",:delete_id=>rss_type.id},
+                            :loading => "$('loading').show( );",
+                            :loaded =>  "$('loading').hide( );",:confirm => "Do you want to Delete ?")
+                         %>
+                        <%=
+                            link_to_remote(rss_type.name,:update => "second",:html=>{:style=>"font-size: 20px; color: black; valign: top;"},:url =>{:action=>"view_rss",:rss_id=>rss_type.id,:title=>rss_type.name,:rss_file=>rss_type.rssfile},
+                            :loading=>"$('loading').show( )",
+                            :complete=>"$('loading').hide( )")
+                        %>
+                    <% end %>
+
+                    </div>
+                    </td>
+                    <td valign="top">
+                        <div style="position: relative; top: 0px; left: 100px; width: 600px; height: 500px;  overflow-x: auto;overflow-y: auto;" id="second">
+						<br><br><br>
+						<%if @rss_types==nil or @rss_types.length==0%>
+						<h3><font color="black" size="10">Add Rss feed to get updates</font></h>
+						<%else%>
+						<h3><font color="black" size="10">Click on Rss feed to get updates</font></h>
+						<%end%>
+                            </div>
+                    </td>
+                    </tr>
+                </i>
+            </div>
+        </div>
+    </td>
+</tr>

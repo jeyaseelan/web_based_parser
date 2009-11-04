@@ -1,0 +1,79 @@
+<%= javascript_include_tag "prototype" %>
+<%= javascript_include_tag "prototype" %>
+<%= javascript_include_tag "livevalidation" %>
+<%= stylesheet_link_tag 'style' %>
+<%= stylesheet_link_tag 'livevalidation' %>
+
+<table align="right"><tr><td align="right"><font color="red">Close</font>
+<%= link_to_remote( (image_tag "/images/close.png",:border=>0,:title=>'Close',:width=>"50px",:height=>"50px"),:update => "new_edit_rss",
+                         :url =>{ :controller=>"admin",:action=>"ajax_empty"},
+                         :loading => "$('loading').show( );",
+                         :loaded =>  "$('loading').hide( );")%>
+
+</td></tr></table>
+<%form_tag(:action => "save_edit_rss",:id=>params[:id]) do %>
+<center><table border=0 width="100%" >
+
+<%if flash[:notice] and flash[:notice]!="" %>
+    <tr>
+        <td colspan=3>
+            
+            <font size=2 color=red>
+                <%=flash[:notice] %>
+            </font>
+            <%=flash[:notice]=nil %>
+        </td>
+    </tr><%end %>
+	<tr><td align="center" colspan="2"><h2><%if @rss_type ==nil%>New Rss!<%else%>Edit Rss!<%end%></h2></td>
+	<tr></tr>
+    <tr>
+        <td width="20%">
+            Rss Category
+        </td>
+        <td width="30%">
+            <%=text_field :rss_type,:name,:id=>"rssname" %>
+        </td><td align="left"><span id="rssnameerror">&nbsp;</span></td>
+    </tr>
+        <tr>
+        <td>
+            Rss File
+        </td>
+        <td>
+            <%=text_field :rss_type,:rssfile,:id=>"rsstype" %>
+        </td>
+        <td align="left"><span id="rsstypeerror">&nbsp;</span>
+    </tr>
+    <tr>
+        <td>
+            Rss Description
+        </td>
+        <td>
+            <%=text_area :rss_type,:desc,:id=>"rssdesc",:rows=>"4" %>
+        </td>
+        <td align="left"><span id="rssdescerror">&nbsp;</span>
+    </tr>
+
+    <tr><td>&nbsp;</td>
+        <td align="center">
+            <%=submit_tag "Save Changes" %>
+        </td><td>&nbsp;</td>
+    </tr></caption>
+</table>
+
+
+<SCRIPT LANGUAGE="JavaScript1.3">
+var rssname = new LiveValidation( "rssname",{ validMessage: "",insertAfterWhatNode: "rssnameerror"});
+rssname.add( Validate.Presence,{failureMessage: "*RSS Category can't be blank !*"} ); 
+
+var rsstype = new LiveValidation( "rsstype",{ validMessage: " ",insertAfterWhatNode: "rsstypeerror"});
+rsstype.add( Validate.Presence,{failureMessage: "* RSS File can't be blank ! *"});
+
+var rssdesc = new LiveValidation( "rssdesc",{ validMessage: " ",insertAfterWhatNode: "rssdescerror"});
+rssdesc.add( Validate.Presence,{failureMessage: "* RSS Description Number can't be blank !*"});
+
+
+
+
+</script>
+
+<%end%>

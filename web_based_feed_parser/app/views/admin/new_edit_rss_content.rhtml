@@ -1,0 +1,122 @@
+
+<table align="right">
+    <tr>
+        <td align="right">
+            <font color="red">Close</font>
+              <%=
+                link_to_remote( (image_tag "/images/close.png",:border=>0,:title=>'Close',:width=>"50px",:height=>"50px"),:update => "new_edit_rss_content",
+                :url =>{ :controller=>"admin",:action=>"ajax_empty"},
+                :loading => "$('loading').show( );",
+                :loaded =>  "$('loading').hide( );")
+              %>
+
+        </td>
+    </tr>
+</table>
+<%form_tag(:action => "save_edit_rss_content",:edit=>params[:edit],:id=>params[:id]) do %>
+
+
+
+<table border=0 width="100%">
+
+<%if flash[:notice] and flash[:notice]!="" %>
+    <tr>
+        <td colspan=3>
+            
+            <font size=2 color=red>
+                <%=flash[:notice] %>
+            </font>
+            <%=flash[:notice]=nil %>
+        </td>
+    </tr><%end %>
+	<tr><td align="center" colspan="2"><h2><%if @rss_content ==nil%>New Rss Content!<%else%>Edit Rss Content!<%end%></h2></td>
+	<tr></tr>
+	
+	  <tr>
+        <td width="20%">
+            Category
+        </td>
+        <td width="30%">
+            <%=collection_select(:rss_type, :id, @rss_types,:id, :name,{:prompt => true},
+         	                                  {:class=> "comboboxtext",:id => "rss_type_id"})%>
+              
+        </td><td align="left"></td>
+    </tr>
+	
+	
+    <tr>
+        <td width="20%">
+            Title
+        </td>
+        <td width="30%">
+            <%=text_field :rss_content,:title,:id=>"name" %>
+        </td><td align="left"><span id="nameerror">&nbsp;</span></td>
+    </tr>
+       
+    <tr>
+        <td>
+            Description
+        </td>
+        <td>
+            <%=text_area :rss_content,:description,:id=>"desc",:rows=>"2" ,:cols=>25 %>
+        </td>
+        <td align="left"><span id="descerror">&nbsp;</span>
+    </tr>
+    
+    <tr>
+        <td>
+            Posted at
+        </td>
+        <td>
+           <%=text_field :rss_content,:posted_at,:id=>"time",:readOnly=>true,:onClick=>"ds_sh(this,'time','YES','YES');" %>
+           
+           
+        </td>
+        
+        <td align="left"><span id="timeerror">&nbsp;</span>
+    </tr>
+     
+     
+     <tr>
+        <td>
+            Article
+        </td>
+        <td>
+            <%=text_area :rss_content,:article,:id=>"article",:rows=>"5" ,:cols=>25 %>
+        </td>
+        <td align="left"><span id="articleerror">&nbsp;</span>
+    </tr>
+     
+     
+     
+    <tr><td>&nbsp;</td>
+        <td align="center">
+            <%= submit_tag "Save Changes"%>
+			
+        </td><td>&nbsp;</td>
+    </tr>
+</table>
+<%end %>
+
+<SCRIPT LANGUAGE="JavaScript1.3">
+var name = new LiveValidation( "name",{ validMessage: "",insertAfterWhatNode: "nameerror"});
+name.add( Validate.Presence,{failureMessage: "*RSS Category can't be blank !*"} ); 
+
+
+
+var desc = new LiveValidation( "desc",{ validMessage: " ",insertAfterWhatNode: "descerror"});
+desc.add( Validate.Presence,{failureMessage: "* RSS Description Number can't be blank !*"});
+
+
+
+
+var time = new LiveValidation( "time",{ validMessage: " ",insertAfterWhatNode: "articleerror"});
+time.add( Validate.Presence,{failureMessage: "* Rss Time Number can't be blank !*"});
+
+var article = new LiveValidation( "article",{ validMessage: " ",insertAfterWhatNode: "timeerror"});
+article.add( Validate.Presence,{failureMessage: "* Rss Time Number can't be blank !*"});
+
+
+
+</script>
+

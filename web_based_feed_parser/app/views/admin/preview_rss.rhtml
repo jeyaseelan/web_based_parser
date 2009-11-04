@@ -1,0 +1,20 @@
+<% if @rss_contents.length >0 %>
+    <% i=0 %>
+    <% @rss_contents.each do |rss_type_content| %>
+        <% i=i+1 %>
+        <% rss_content_div_id="rss_content_div_id"+i.to_s %>
+        <% rss_content_inner_div_id="rss_content_inner_div_id"+i.to_s %>
+        <% rss_content_span_id="rss_content_span_id"+i.to_s %>
+        <% rss_content_class="rss_content_feed_second" if i%2==0 %>
+        <% rss_content_class="rss_content_feed_first" if i%2!=0 %>
+        <div id=<%=rss_content_div_id%> class=<%=rss_content_class%>>
+            <h4><%= link_to rss_type_content.title, {:action =>"view_article",:id=>rss_type_content.id},:target=>"_blank",:style =>'font-size: 25px' %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#i" onClick="hide_input('<%=rss_content_inner_div_id%>','<%=rss_content_span_id%>');">
+                    <span id=<%=rss_content_span_id%>>Show Description</span>
+                </a>
+            </h4>
+            <div id=<%=rss_content_inner_div_id%>><%= rss_type_content.description %></div>
+        </div>
+        <script>Effect.toggle('<%= rss_content_inner_div_id %>', 'Blind');</script>
+    <% end %>
+<% end %>

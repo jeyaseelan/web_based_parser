@@ -1,0 +1,13 @@
+--- 
+user_rss_types_002: 
+  updated_at: 2009-11-03 06:43:45.244749
+  open_type: new
+  id: "8"
+  rss_type_id: "2"
+  user_id: "2"
+user_rss_types_001: 
+  updated_at: 2009-11-03 06:43:45.222914
+  open_type: new
+  id: "7"
+  rss_type_id: "1"
+  user_id: "2"

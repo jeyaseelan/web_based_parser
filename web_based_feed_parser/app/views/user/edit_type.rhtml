@@ -1,0 +1,14 @@
+<center>
+    <h1>
+        <center>Edit Feed</center>
+    </h1>
+    <h1>&nbsp;</h1>
+
+    <h2><%= check_box :rss_type_edit,:id,:checked=>@s,:id=>"rss_content" %>Tick if you want the articles to open in only one window</h2>
+    <h2>&nbsp;Untick if you want them to be opened in new windows or tabs</h2>
+    <h1>&nbsp;</h1><%=
+        link_to_remote("Save_Changes",:update => "main",:html=>{:style=>"font-size: 20px; color: black; valign: top;"},:submit=>"second",:url =>{:action=>"sub_index",:edit_id=>@user_rss_type[0].id},
+        :loading=>"$('loading').show( )",
+        :complete=>"$('loading').hide( )")
+                   %>
+</center>

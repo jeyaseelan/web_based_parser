@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>Technology News</title>
+    <link>preview</link>
+    <description>This Rss for the current Technology and Development news.</description>
+    <item>
+      <title>Cyber security standards</title>
+      <link>12</link>
+      <description>Cyber security standards are security standards which enable organizations to practice safe security techniques in order to minimize the number of successful cyber security attacks..</description>
+      <pubDate>Fri, 09 Oct 2009 09:04:07 -0000</pubDate>
+    </item>
+    <item>
+      <title>How to create Mobile Identity</title>
+      <link>1</link>
+      <description>Security engineering is the field of engineering dealing with the security and integrity of real-world systems
+</description>
+      <pubDate>Sat, 24 Oct 2009 16:05:10 -0000</pubDate>
+    </item>
+    <item>
+      <title>Universal phone charger approved</title>
+      <link>10</link>
+      <description>A new charger that will work with all handsets has been approved by the International Telecommunication Union.</description>
+      <pubDate>Thu, 15 Oct 2009 04:19:17 -0000</pubDate>
+    </item>
+    <item>
+      <title>Ubiquitous computing</title>
+      <link>16</link>
+      <description>Ubiquitous computing (ubicomp) integrates computation into the environment, rather than having computers which are distinct objects.</description>
+      <pubDate>Sat, 17 Oct 2009 08:08:05 -0000</pubDate>
+    </item>
+    <item>
+      <title>wrewrw</title>
+      <link>23</link>
+      <description>werwer</description>
+      <pubDate>Wed, 18 Nov 2009 00:00:00 -0000</pubDate>
+    </item>
+  </channel>
+</rss>

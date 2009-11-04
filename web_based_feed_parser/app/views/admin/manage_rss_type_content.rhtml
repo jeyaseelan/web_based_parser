@@ -1,0 +1,89 @@
+<%= javascript_include_tag "prototype" %>
+<span class="ds_box" id="ds_conclass" style="display: none;">
+<span id="ds_calclass"></span></span>
+<script type="text/javascript">
+var ds_oe = ds_getel('ds_calclass');
+var ds_ce = ds_getel('ds_conclass');
+</script>
+<div id="rss_type_content"><h2>Choose a Category<h2>
+<%= collection_select(:rss_type, :id, @rss_types,:id, :name,{:prompt => true},
+         	                                  {:class=> "comboboxtext",:id => "category_id",:onchange => remote_function(:update=>"rss_type_content",
+			                                  :url=>{:action=>'manage_rss_type_content'},
+			                                  :submit=>"rss_type_content",
+			                                  :loading => "$('new_rss_content').show();",
+	                                          :loaded => "$('new_rss_content').hide();")})%>
+<div id="new_rss_content" style="display: none;"><i><font color="blue" size=4><%= image_tag("spinner.gif",
+              :align => "absmiddle",
+              :border => 0,
+              :id => "spinner"
+               ) %> &nbsp;loading...</i></font></div>
+<%if params[:rss_type] and params[:rss_type]!=""%>
+<table>
+    <tr>
+        <td>
+            <br><%=
+                link_to_remote( (image_tag "/images/new_rss.jpg",:border=>0,:title=>'New Rss Content',:width=>"120px",:height=>"100px"),:update => "new_edit_rss_content",
+                :url =>{ :controller=>"admin",:action=>"new_edit_rss_content",:rss_type_id=>params[:rss_type][:id],:edit=>"false"},
+                :loading => "$('loading').show( );",
+                :loaded =>  "$('loading').hide( );")
+%>
+
+            <div id="loading" style="display: none;">
+                <i>
+                    <font color="blue" size=2><%=
+                            image_tag("spinner.gif",
+                            :align => "absmiddle",
+                            :border => 0,
+                            :id => "spinner"
+                            )
+%>&nbsp;loading...
+                        </i>
+                        <font>
+                            </div>
+
+                            </td>
+                            </tr>
+                            </table>
+                        
+        </td>
+    </tr>
+</table>
+
+<div id="new_edit_rss_content">
+    <% if flash[:sucess]=='false' %>
+        <%= render :partial => "admin/new_edit_rss" ,:rss_type=>@values %>
+    <% else %>
+        <font color="red" size="2"><%= flash[:notice] %>
+            <% flash[:notice]=nil %>
+        </font>
+    <% end %>
+</div>
+<%if @rss_contents.length >0%>
+<%i=0%>
+<%@rss_contents.each do |rss_type_content|%>
+<%i=i+1%>
+<%rss_content_div_id="rss_content_div_id"+i.to_s%>
+<%rss_content_inner_div_id="rss_content_inner_div_id"+i.to_s%>
+<%rss_content_span_id="rss_content_span_id"+i.to_s%>
+<% rss_content_class="rss_content_feed_second" if i%2==0%>
+<% rss_content_class="rss_content_feed_first" if i%2!=0%>
+<div id=<%=rss_content_div_id%> class=<%=rss_content_class%>>
+    <h4><%=
+            link_to_remote( (image_tag "/images/Edit.gif",:border=>0,:title=>'Edit Rss Content',:align=>"right",:valign=>"top",:id=>rss_type_content.id),:update => "new_edit_rss_content",:url => {:action=>"new_edit_rss_content",:id=>rss_type_content.id,:rss_type_id=>params[:rss_type][:id],:edit=>"true"},
+            :loading => "$('loading').show( );",
+            :loaded =>  "$('loading').hide( );")
+%><%= link_to ((image_tag "/images/delete.gif",:border=>0,:title=>'Delete Rss Content',:align=>"right",:valign=>"top"), {:action=>"delete_rss_type_content",:id=>rss_type_content.id,:rss_type_id=>params[:rss_type][:id]},{:confirm => "Do you want to Delete ?"}) %><%= link_to rss_type_content.title, {:action =>"view_article",:id=>rss_type_content.id},:target=>"_blank",:style =>'font-size: 25px' %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#i" onClick="hide_input('<%=rss_content_inner_div_id%>','<%=rss_content_span_id%>');">
+            <span id=<%=rss_content_span_id%>>Show Description</span>
+        </a>
+    </h4>
+
+    <div id=<%=rss_content_inner_div_id%>><%= rss_type_content.description %></div>
+</div>
+<script>Effect.toggle('<%= rss_content_inner_div_id %>', 'Blind');</script>
+<%end%>
+<%end%>
+<%end%>	                                                                              
+</div>
+
+                          

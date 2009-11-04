@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>Magazine News</title>
+    <link>preview</link>
+    <description>BBC News Magazine: in-depth features on topical issues plus a round-up of UK newspapers, your letters and a daily mini-quiz.</description>
+    <item>
+      <title>In praise of scepticism</title>
+      <link>8</link>
+      <description>In a light-hearted essay, Clive James takes a look at Montaigne, golf-ball crisps and our attitude towards climate change sceptics.</description>
+      <pubDate>Fri, 23 Oct 2009 22:18:14 -0000</pubDate>
+    </item>
+    <item>
+      <title>Truth and lies</title>
+      <link>9</link>
+      <description>I lied to my dying mother about Bloody Sunday</description>
+      <pubDate>Fri, 23 Oct 2009 08:04:10 -0000</pubDate>
+    </item>
+    <item>
+      <title>Super-size TV</title>
+      <link>6</link>
+      <description>Cool, or an energy guzzling style mistake?</description>
+      <pubDate>Sat, 24 Oct 2009 13:13:10 -0000</pubDate>
+    </item>
+  </channel>
+</rss>

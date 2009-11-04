@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>Business News</title>
+    <link>preview</link>
+    <description>news, comment and analysis on personal finance, Your Money guides, and UK house price search</description>
+    <item>
+      <title>Windows sales 'please' Microsoft</title>
+      <link>20</link>
+      <description>Microsoft says it is pleased with the demand for Windows 7 as it reports an 18% fall in quarterly profits.</description>
+      <pubDate>Mon, 12 Oct 2009 00:00:00 -0000</pubDate>
+    </item>
+    <item>
+      <title>HD demand boosts BSkyB profit</title>
+      <link>22</link>
+      <description>BSkyB reports a 40% rise in first quarter profits, helped by strong demand from new customers for high definition viewing.</description>
+      <pubDate>Thu, 15 Oct 2009 05:41:07 -0000</pubDate>
+    </item>
+    <item>
+      <title>Fight for the future of fishermen</title>
+      <link>14</link>
+      <description>Young fishermen in Scotland face an uncertain future, with fish prices plummeting, but one group is fighting to change that.</description>
+      <pubDate>Thu, 15 Oct 2009 08:11:09 -0000</pubDate>
+    </item>
+    <item>
+      <title>Nokia 'seeking Apple royalties'</title>
+      <link>4</link>
+      <description>Mobile phone maker Nokia's bid to sue Apple is aimed at trying to extract royalty payments, an analyst suggests.</description>
+      <pubDate>Wed, 14 Oct 2009 00:00:00 -0000</pubDate>
+    </item>
+    <item>
+      <title>Obama hails companies' pay cuts</title>
+      <link>18</link>
+      <description>Barack Obama welcomes plans to force some US firms which accepted government bail-outs to cut executive pay.</description>
+      <pubDate>Fri, 23 Oct 2009 08:07:20 -0000</pubDate>
+    </item>
+  </channel>
+</rss>

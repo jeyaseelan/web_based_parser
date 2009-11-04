@@ -1,0 +1,51 @@
+<%= javascript_include_tag "prototype" %>
+<div id="rss_type_content"><h2>Choose a Category<h2>
+<%= collection_select(:rss_type, :id, @rss_types,:id, :name,{:prompt => true},
+         	                                  {:class=> "comboboxtext",:id => "category_id",:onchange => remote_function(:update=>"rss_type_content",
+			                                  :url=>{:action=>'generate_rss_feed'},
+			                                  :submit=>"rss_type_content",
+			                                  :loading => "$('new_rss_content').show();",
+	                                          :loaded => "$('new_rss_content').hide();")})%>
+<div id="new_rss_content" style="display: none;"><i><font color="blue" size=4><%= image_tag("spinner.gif",
+              :align => "absmiddle",
+              :border => 0,
+              :id => "spinner"
+               ) %> &nbsp;loading...</i></font></div>
+<%if params[:rss_type] and params[:rss_type]!=""%>
+<table><tr><td><br>
+
+
+<div id="new_edit_rss_content">
+	<%if flash[:notice]!="" %>
+	<font color="red" size="2"><%=flash[:notice]%><%flash[:notice]=nil%></font>
+	<%end%>
+</div>
+<%if @rss_contents.length >0%>
+<a href="#"><%=image_tag "/images/selectall.jpg",:border=>0,:title=>'Close',:align=>"right",:style=>"position: relative;left: 300px;",:width=>"100px",:height=>"100px",:onclick=>"check_all('rss_content',#{@rss_contents.length})"%></a>
+<a href="#"><%=image_tag "/images/deselect.jpg",:border=>0,:title=>'Close',:align=>"right",:style=>"position: relative;left: 300px;",:width=>"100px",:height=>"100px",:onclick=>"de_check_all('rss_content',#{@rss_contents.length})"%></a>
+<br>
+<%form_tag(:action => "create_rss_feed",:rss_type=>params[:rss_type],:html=>{:name=>"my_form"}) do %>
+<%i=0%>
+<%@rss_contents.each do |rss_content|%>
+<%i=i+1%>
+
+<% rss_content_class="rss_content_feed_second" if i%2==0%>
+<% rss_content_class="rss_content_feed_first" if i%2!=0%>
+
+<h4><%i%>
+</h4>
+
+<div id=<%=rss_content_class%>>
+<%=check_box "rss_content","#{rss_content.id}",:checked=>rss_content.select_status,:id=>"rss_content_#{i}"%><%=rss_content.title%><br>
+Posted <%=rss_content.posted_at.strftime("%a, %d %b %Y %H:%M:%S %Z")%>
+</div>
+
+
+<%end%>
+<br>
+<%= submit_tag "Create Rss"%>
+<%end%>
+<%end%>
+<%end%>	                                                                              
+</div>
+                          

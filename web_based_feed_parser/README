@@ -1,0 +1,151 @@
+A web-based parser
+
+It is a simple web-based parser. There are two modules in this project, admin and user. Admin module covers all the functionalities of creating, editing, making  rss xml files for the site dynamically. He can post the contents and update them easily where user module covers all the functionalities of subscribing the rss feed and maintaining their status of reading the articles.
+User can also manage his subscriptions of rss feed.
+
+
+Admin Module
+
+1.Login 
+2.Creating New Rss Category and Managing
+3.Adding  contents and updates to the new and old Rss Categories  and  managing
+4.Creating Rss xml files for the site by choosing the contents
+5.Previewing the Rss feed 
+6.Logout
+
+
+Login
+Please enter admin name and password
+
+                        Username: admin
+                        Password : password 
+
+
+After entering it goes to admin home page and says the last updated date
+
+
+2.Creating and Managing Rss Categories
+         
+		Then, click menu Categories, it lists the current categories and their deltails, also admin can create new rss feeds
+
+
+He can also create, add, edit and delete Rss categories. By clicking Rss icon
+                     
+
+         
+3. Adding contents and updates to the Rss Categories 
+
+Then, click menu Updates and select a type it lists all the articles or news under this category
+
+
+
+In this he can create and edit the existing contents by choosing each category. Show Description button briefs the article.
+
+
+
+4. Creating Rss Xml files
+                  Then click menu Feed Creation menu. There are two ways to create Rss feed xml
+
+		1.If you choosing “all” option in category combo
+		   You can create all rss xml file for the category
+
+		2.By choosing each category you can create rss xml file
+		  This option provides option to select and deselect all the contents. By default when the new content is created it is added to its rss xml files
+   
+
+5. Previewing 
+  
+     It shows the preview of all rss feeds
+
+
+
+6.Logout
+
+       By clicking logout admin session is cleared and logged out.
+
+    
+
+User Module
+                              
+
+			1. Login
+
+			2. Add new Rss
+
+			3. Delete Rss
+
+			4. Edit Rss
+
+			5. View Rss updates
+
+			6. Keeping as unread
+			
+			7. View all
+			
+			8. Log out
+
+			9. New user 
+
+
+1. Login 
+	
+Please enter user name and password
+
+                        Username: user
+                        Password : password 
+
+After entering  username and password it goes to user hompage. It lists the 
+user subscriptions  rss feed. He can also mange them
+
+
+
+2.Add New Rss
+
+   By clicking new Rss icon he can subscribe new Rss feed
+
+
+
+
+3.Delete Rss
+
+ By clicking rss delete icon he can unsubscribe
+
+
+
+
+4.Edit Rss
+
+      By clicking edit icon he can manage browser window open method
+either  in the same window or in the new windows or tabs.
+
+5. View Rss updates
+
+By clicking on each category he can get the updates
+
+
+
+  
+                            
+                 
+                       
+6. Keeping as unread
+    
+              When the user first time visits it is automatically marked as read.
+If the user clicks on the check box it is marked as unread. It shows the articles always until he marks as read
+
+
+7. View all
+          View all option lists all the items in the rss whether it is read or unread.
+      
+
+
+ 
+8.Log out.
+       By clicking logout user session is cleared
+
+
+9. New User
+ 
+                Unregistered users can also create account by clicking new user and registering themselves
+
+

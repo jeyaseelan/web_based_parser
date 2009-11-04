@@ -1,0 +1,18 @@
+<table align="left">
+    <tr>
+        <td>
+            <h4>Welcome Dear <%= session[:name] %></h4>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h3>This site was last updated on <%=@rss_content.updated_at.strftime("%a, %d %b %Y %H:%M:%S %Z")%></h3>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h2>Update Your contents</h2>
+        </td>
+    </tr>
+</table>
+

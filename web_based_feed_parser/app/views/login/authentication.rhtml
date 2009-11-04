@@ -1,0 +1,98 @@
+
+<% form_tag(:controller => "login", :action => "authentication") do %>
+
+<table width="100%" align="center">
+	<tr><td><%if flash[:notice]!=nil %>
+<font size=2 color=red>
+    <%=flash[:notice] %>
+</font>
+<%end %>
+</td>
+<tr >
+	<td height="18px"><span id="unameerror"></span></td>
+</tr>
+<tr>
+	<td height="18px"><span id="passworderror"></span></</td>
+</tr>
+	<tr><td height="60px"></td></tr>
+<tr><td align="center">
+	<h3 >Enter your credentials</h3>
+<table width="273" border="0" cellspacing="0" cellpadding="0" >
+  <tr class="sidetext">
+    <td height="19">
+    <%=image_tag("/images/top-left.GIF",:height=>19,:width=>"22")%>
+    </td>
+    <td background="../../images/top.GIF">&nbsp;</td>
+    <td>
+    <%=image_tag("/images/top-right.GIF",:height=>19,:width=>"22")%>
+    </td>
+  </tr>
+  <tr class="sidetext">
+    <td bgcolor="EEEEEE">&nbsp;</td>
+    <td align="center" valign="top" bgcolor="EEEEEE"><br>              
+      <table width="247" border="0" cellspacing="0" cellpadding="0">
+        <tr class="sidetext">
+          <td align="left" valign="center" class="tabletopheading"><b>Username&nbsp;&nbsp;&nbsp;</b> </td>          
+          <td align="left" valign="top"><%=text_field "user", "user_name",:id=>"uname",:size=>"25" %></td>  
+          <td width="8" rowspan="3">&nbsp;</td>                                      
+      </tr>
+        
+        <tr class="sidetext" rowspan="2">
+          <td colspan="2">&nbsp; </td>
+        </tr>
+        <tr class="sidetext">
+          <td align="left" valign="center"><b>Password&nbsp;&nbsp;&nbsp;&nbsp; </b></td>
+          <td align="left" valign="top" oncopy="return false;" onpaste="return false;"><%= password_field "user", "password",:size=>"25",:id=>"password" %></td>
+        </tr>
+        <tr class="sidetext">
+          <td height="19" align="left" valign="top">
+           <%=image_tag("/images/key.GIF",:height=>70,:width=>55)%>
+          </td>
+          <td align="left" valign="top">
+            <div align="center"><span class="style3"></span>
+            <table width="150" border="0" cellspacing="0" cellpadding="0">
+                <tr class="sidetext">
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="sidetext">
+                    <td align="left" width="51">&nbsp;</td>
+                    <td width="51" height="19" align="right" valign="top">
+                        <input type="image" src="/images/signin.gif"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2 align=right>
+                        <br><%= link_to "New User",:controller=>"login",:action=>"new_user" %>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td bgcolor="EEEEEE">&nbsp;</td>
+  </tr>
+  <tr class="sidetext">
+    <td height="19">
+    <%=image_tag("/images/bottom-left.GIF",:height=>19,:width=>"22")%>
+    </td>
+    <td background="../../images/bottom.GIF">&nbsp;</td>
+    <td>
+    <%=image_tag("/images/bottom-right.GIF",:height=>19,:width=>"22")%>
+    </td>
+  </tr>
+</table></td></tr></table>
+
+<%end%>
+<script LANGUAGE="JavaScript1.3">
+
+var uname = new LiveValidation( "uname",{ validMessage: "",insertAfterWhatNode: "unameerror"});
+uname.add( Validate.Presence,{failureMessage: "*User Name can't be blank !*"} ); 
+
+var password = new LiveValidation( "password",{ validMessage: "",insertAfterWhatNode: "passworderror"});
+password.add( Validate.Presence,{failureMessage: "*Password can't be blank !*"} ); 
+
+</script>
+<br><br>
